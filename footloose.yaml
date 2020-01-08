@@ -8,7 +8,7 @@ machines:
     ignite:
       cpus: 2
       diskSize: 5GB
-      kernel: weaveworks/ignite-kernel:4.19.47
+      kernel: chanwit/ignite-kernel:4.19.93-041993-generic
       memory: 1GB
     image: weaveworks/ignite-centos:firekube-pre3
     name: node%d
