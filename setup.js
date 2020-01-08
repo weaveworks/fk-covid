@@ -43,7 +43,7 @@ const footloose = config => ({
         cpus: 2,
         memory: '1GB',
         diskSize: '5GB',
-        kernel: 'weaveworks/ignite-kernel:4.19.47',
+        kernel: 'chanwit/ignite-kernel:4.19.93-041993-generic',
       },
       portMappings: [{
         containerPort: 22,
