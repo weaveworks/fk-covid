@@ -8,8 +8,8 @@ machines:
     ignite:
       cpus: 2
       diskSize: 5GB
-      kernel: chanwit/ignite-kernel:4.19.93
-      memory: 1GB
+      kernel: chanwit/ignite-kernel:4.19.47
+      memory: 4GB
     image: weaveworks/ignite-centos:firekube-pre3
     name: node%d
     portMappings:
