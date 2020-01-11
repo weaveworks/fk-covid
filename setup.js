@@ -41,9 +41,9 @@ const footloose = config => ({
       backend: config.backend,
       ignite: {
         cpus: 2,
-        memory: '1GB',
+        memory: '4GB',
         diskSize: '5GB',
-        kernel: 'chanwit/ignite-kernel:4.19.93',
+        kernel: 'chanwit/ignite-kernel:4.19.47',
       },
       portMappings: [{
         containerPort: 22,
