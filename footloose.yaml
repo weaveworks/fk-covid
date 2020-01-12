@@ -10,7 +10,7 @@ machines:
       diskSize: 5GB
       kernel: chanwit/ignite-kernel:4.19.47
       memory: 4GB
-    image: chanwit/ignite-centos:latest
+    image: weaveworks/ignite-centos:firekube-pre3
     name: node%d
     portMappings:
     - containerPort: 22
