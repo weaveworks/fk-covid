@@ -18,7 +18,7 @@ const backend = {
     }]
   },
   ignite: {
-    image: 'chanwit/ignite-centos:latest', //'weaveworks/ignite-centos:firekube-pre3',
+    image: 'weaveworks/ignite-centos:firekube-pre3',
     privileged: false,
     volumes: [],
   },
