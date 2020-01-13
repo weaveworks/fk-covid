@@ -22,6 +22,7 @@ spec:
     spec:
       nodeSelector:
         node-role.kubernetes.io/master: ""
+        kubernetes.io/hostname: "node0"
       tolerations:
       # Allow scheduling on master nodes. This is required because during
       # bootstrapping of the cluster, we may initially have just one master,
