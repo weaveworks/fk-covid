@@ -8,6 +8,8 @@ items:
     name: master-0
     namespace: weavek8sops
   spec:
+    versions:
+      kubelet: 1.15.7
     providerSpec:
       value:
         apiVersion: baremetalproviderspec/v1alpha1
@@ -26,6 +28,8 @@ items:
     name: master-1
     namespace: weavek8sops
   spec:
+    versions:
+      kubelet: 1.15.7
     providerSpec:
       value:
         apiVersion: baremetalproviderspec/v1alpha1
@@ -44,6 +48,8 @@ items:
     name: master-2
     namespace: weavek8sops
   spec:
+    versions:
+      kubelet: 1.15.7
     providerSpec:
       value:
         apiVersion: baremetalproviderspec/v1alpha1
@@ -62,6 +68,8 @@ items:
     name: worker-0
     namespace: weavek8sops
   spec:
+    versions:
+      kubelet: 1.15.7
     providerSpec:
       value:
         apiVersion: baremetalproviderspec/v1alpha1
