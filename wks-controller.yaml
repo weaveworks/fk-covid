@@ -42,6 +42,11 @@ spec:
         operator: Exists
       containers:
       - name: controller
+        env:
+        - name: FOOTLOOSE_SERVER_ADDR
+          value: 172.17.0.1
+        - name: FOOTLOOSE_BACKEND
+          value: docker
         image: chanwit/wksctl-controller:fix_ha-3bc2081d
         # jrryjcksn/wks-controller:demo # quay.io/wksctl/controller:0.8.1
         command:
