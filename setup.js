@@ -118,7 +118,7 @@ if (config.machines !== undefined) {
       privateIP: machine.runtimeNetworks[0].ip,
       sshPort: sshPort(machine),
       role: 'master',
-      kubeVersion: config.version,
+      kubeVersion: config.controlPlane.version,
     }));
   }
 
@@ -129,7 +129,7 @@ if (config.machines !== undefined) {
       privateIP: machine.runtimeNetworks[0].ip,
       sshPort: sshPort(machine),
       role: 'worker',
-      kubeVersion: config.version,
+      kubeVersion: config.workers.version,
     }));
   }
 
