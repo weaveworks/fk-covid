@@ -82,6 +82,6 @@ items:
           address: 127.0.0.1
           port: 2225
     versions:
-      controlPlane: 1.14.7
-      kubelet: 1.14.7
+      controlPlane: 1.14.1
+      kubelet: 1.14.1
 kind: List
