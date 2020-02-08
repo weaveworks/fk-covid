@@ -19,7 +19,7 @@ items:
           address: 127.0.0.1
           port: 2222
     versions:
-      kubelet: 1.16.6
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -39,7 +39,7 @@ items:
           address: 127.0.0.1
           port: 2223
     versions:
-      kubelet: 1.16.6
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -59,7 +59,7 @@ items:
           address: 127.0.0.1
           port: 2224
     versions:
-      kubelet: 1.16.6
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -79,5 +79,5 @@ items:
           address: 127.0.0.1
           port: 2225
     versions:
-      kubelet: 1.16.6
+      kubelet: 1.14.1
 kind: List
