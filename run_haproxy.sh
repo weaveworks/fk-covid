@@ -1,4 +1,4 @@
 docker run --detach \
-	--ip 172.17.0.2 \
+	--name haproxy \
 	-v $PWD/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg \
 	haproxy
