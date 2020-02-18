@@ -13,13 +13,13 @@ items:
         apiVersion: baremetalproviderspec/v1alpha1
         kind: BareMetalMachineProviderSpec
         private:
-          address: 172.17.0.3
+          address: 172.17.0.2
           port: 22
         public:
           address: 127.0.0.1
           port: 2222
     versions:
-      kubelet: 1.17.2
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -33,13 +33,13 @@ items:
         apiVersion: baremetalproviderspec/v1alpha1
         kind: BareMetalMachineProviderSpec
         private:
-          address: 172.17.0.4
+          address: 172.17.0.3
           port: 22
         public:
           address: 127.0.0.1
           port: 2223
     versions:
-      kubelet: 1.17.2
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -53,13 +53,13 @@ items:
         apiVersion: baremetalproviderspec/v1alpha1
         kind: BareMetalMachineProviderSpec
         private:
-          address: 172.17.0.5
+          address: 172.17.0.4
           port: 22
         public:
           address: 127.0.0.1
           port: 2224
     versions:
-      kubelet: 1.17.2
+      kubelet: 1.14.1
 - apiVersion: cluster.k8s.io/v1alpha1
   kind: Machine
   metadata:
@@ -73,11 +73,11 @@ items:
         apiVersion: baremetalproviderspec/v1alpha1
         kind: BareMetalMachineProviderSpec
         private:
-          address: 172.17.0.6
+          address: 172.17.0.5
           port: 22
         public:
           address: 127.0.0.1
           port: 2225
     versions:
-      kubelet: 1.17.2
+      kubelet: 1.14.1
 kind: List
