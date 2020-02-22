@@ -14,8 +14,8 @@ spec:
       apiVersion: baremetalproviderspec/v1alpha1
       kind: BareMetalClusterProviderSpec
       user: root
-      # apiServer:
-      #  externalLoadBalancer: 172.17.0.2
+      apiServer:
+        externalLoadBalancer: 172.17.0.6
       os:
         files:
         - source:
