@@ -29,3 +29,4 @@ do_footloose() {
 log "Deleting virtual machines"
 export PATH=~/.wks/bin:${PATH}
 do_footloose delete
+docker rm -f haproxy || true
