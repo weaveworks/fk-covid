@@ -61,7 +61,7 @@ let cluster = {
 }
 
 if (config.externalLoadBalancer !== undefined) {
-  cluster.spec.providerSpec.apiServer = {
+  cluster.spec.providerSpec.value.apiServer = {
     externalLoadBalancer: `${config.externalLoadBalancer}`
   };
 }
