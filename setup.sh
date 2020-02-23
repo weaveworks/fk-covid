@@ -151,16 +151,33 @@ log "Creating Cluster API manifests"
 status="footloose-status.yaml"
 do_footloose status -o json > "${status}"
 jk generate -f config.yaml -f "${status}" setup.js
+
+log "Generating haproxy.cfg"
+jk generate -f config.yaml -f "${status}" haproxy_cfg.js
+
+log "Running external load-balancer"
+docker rm -f haproxy || true
+docker run --detach \
+  --name haproxy \
+  -v $PWD/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg \
+  haproxy
+
+log "Generating cluster.yaml"
+jk generate -f config.yaml -f "${status}" \
+  -p externalLoadBalancer=$(docker inspect haproxy --format="{{ .NetworkSettings.IPAddress }}") \
+  cluster_yaml.js
+
 rm -f "${status}"
+
 
 log "Updating container images and git parameters"
 wksctl init --git-url="$(git_http_url "$(git_remote_fetchurl "${git_remote}")")" --git-branch="$(git_current_branch)"
 
 log "Pushing initial cluster configuration"
-git add config.yaml footloose.yaml machines.yaml flux.yaml wks-controller.yaml
+git add haproxy.cfg cluster.yaml config.yaml footloose.yaml machines.yaml flux.yaml wks-controller.yaml
 
-git diff-index --quiet HEAD || git commit -m "Initial cluster configuration"
-git push "${git_remote}" HEAD
+git diff-index --quiet HEAD || git commit -m "Initial cluster configuration" || true
+git push "${git_remote}" HEAD || true
 
 log "Installing Kubernetes cluster"
 apply_args=(
