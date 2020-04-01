@@ -10,7 +10,7 @@ machines:
       diskSize: 5GB
       kernel: chanwit/ignite-kernel:4.19.47
       memory: 4GB
-    image: chanwit/ignite-centos:7_pre2
+    image: chanwit/ignite-rhel7:latest
     name: node%d
     portMappings:
     - containerPort: 22
