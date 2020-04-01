@@ -18,7 +18,7 @@ const backend = {
     }]
   },
   ignite: {
-	  image: 'chanwit/ignite-rhel7:latest' // 'chanwit/ignite-centos:7_pre2', // 'weaveworks/ignite-centos:firekube-pre3',
+	  image: 'chanwit/ignite-rhel7:latest', // 'chanwit/ignite-centos:7_pre2', // 'weaveworks/ignite-centos:firekube-pre3',
     privileged: false,
     volumes: [],
   },
