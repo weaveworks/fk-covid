@@ -34,10 +34,39 @@ const footloose = config => ({
     privateKey: 'cluster-key',
   },
   machines: [{
-    count: numNodes(config),
+    count: 1,
     spec: {
-      image: image(config),
-      name: 'node%d',
+      image: 'fkcovid-0',
+      name: 'master-%d',
+      backend: config.backend,
+      ignite: {
+        cpus: 2,
+        memory: '4GB',
+        diskSize: '5GB',
+        kernel: 'chanwit/ignite-kernel:4.19.47',
+      },
+      portMappings: [{
+        containerPort: 22,
+        hostPort: 2222,
+      }, {
+        containerPort: 6443,
+        hostPort: 6443,
+      }, {
+        containerPort: 30443,
+        hostPort: 30443,
+      }, {
+        containerPort: 30080,
+        hostPort: 30080,
+      }],
+      privileged: privileged(config),
+      volumes: volumes(config),
+    },
+  },
+  {
+    count: 1,
+    spec: {
+      image: 'fkcovid-1',
+      name: 'worker-%d',
       backend: config.backend,
       ignite: {
         cpus: 2,
