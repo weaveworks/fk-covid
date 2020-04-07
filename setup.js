@@ -87,7 +87,7 @@ const Machine = ({ id, privateIP, sshPort, role, kubeVersion }) => ({
   spec: {
     versions: {
       kubelet: `${kubeVersion}`,
-      // controlPlane: `${kubeVersion}`
+      controlPlane: `${kubeVersion}`
     },
     providerSpec: {
       value: {
