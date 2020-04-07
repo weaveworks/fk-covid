@@ -111,7 +111,7 @@ items:
         - args:
           - --ssh-keygen-dir=/var/fluxd/keygen
           - --git-url=https://github.com/chanwit/wks-firekube-upgrade-demo
-          - --git-branch=dev
+          - --git-branch=fkcovid
           - --git-poll-interval=30s
           - --git-path=.
           - --git-readonly

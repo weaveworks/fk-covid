@@ -14,8 +14,6 @@ spec:
       - 10.96.0.0/12
   providerSpec:
     value:
-      apiServer:
-        externalLoadBalancer: 172.17.0.6
       apiVersion: baremetalproviderspec/v1alpha1
       cri:
         kind: docker
