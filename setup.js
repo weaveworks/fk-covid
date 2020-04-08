@@ -8,8 +8,7 @@ const numNodes = config => config.controlPlane.nodes + config.workers.nodes;
 
 const backend = {
   docker: {
-    image: 'chanwit/fk-covid-node',
-    // 'quay.io/footloose/centos7:0.6.0',
+    image: 'quay.io/footloose/centos7:0.6.0',
     // The below is required for dockerd to run smoothly.
     // See also: https://github.com/weaveworks/footloose#running-dockerd-in-container-machines
     privileged: true,
@@ -41,7 +40,7 @@ const footloose = config => ({
   machines: [{
     count: 1,
     spec: {
-      image: image(config),
+      image: 'chanwit/fk-covid-master',
       name: 'master-%d',
       backend: config.backend,
       ignite: {
@@ -70,7 +69,7 @@ const footloose = config => ({
   {
     count: 1,
     spec: {
-      image: image(config),
+      image: 'chanwit/fk-covid-worker',
       name: 'worker-%d',
       backend: config.backend,
       ignite: {
