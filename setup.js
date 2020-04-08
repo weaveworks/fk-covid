@@ -27,7 +27,7 @@ const backend = {
 const image = config => backend[config.backend].image;
 const privileged = config => backend[config.backend].privileged;
 const volumes = (name, config) => {
-  let result = backend[config.backend].volumes;
+  let result = Object.assign({}, backend[config.backend].volumes);
   result[0].source = name;
   return result
 }
