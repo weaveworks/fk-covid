@@ -10,7 +10,7 @@ machines:
       diskSize: 5GB
       kernel: chanwit/ignite-kernel:4.19.47
       memory: 4GB
-    image: fkcovid-0
+    image: chanwit/fk-covid-node
     name: master-%d
     portMappings:
     - containerPort: 22
@@ -34,7 +34,7 @@ machines:
       diskSize: 5GB
       kernel: chanwit/ignite-kernel:4.19.47
       memory: 4GB
-    image: fkcovid-1
+    image: chanwit/fk-covid-node
     name: worker-%d
     portMappings:
     - containerPort: 22
