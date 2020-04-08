@@ -26,7 +26,11 @@ const backend = {
 
 const image = config => backend[config.backend].image;
 const privileged = config => backend[config.backend].privileged;
-const volumes = config => backend[config.backend].volumes;
+const volumes = (name, config) => {
+  let result = backend[config.backend].volumes;
+  result[0].source = name;
+  return result
+}
 
 const footloose = config => ({
   cluster: {
@@ -59,7 +63,7 @@ const footloose = config => ({
         hostPort: 30080,
       }],
       privileged: privileged(config),
-      volumes: volumes(config),
+      volumes: volumes('fkcovid-0', config),
     },
   },
   {
@@ -88,7 +92,7 @@ const footloose = config => ({
         hostPort: 30080,
       }],
       privileged: privileged(config),
-      volumes: volumes(config),
+      volumes: volumes('fkcovid-1', config),
     },
   }],
 });
