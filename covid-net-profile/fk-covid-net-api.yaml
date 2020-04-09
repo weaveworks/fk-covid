@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fk-covid-net-api
+  namespace: kubeflow
+  labels:
+    app: fk-covid-net-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fk-covid-net-api
+  template:
+    metadata:
+      labels:
+        app: fk-covid-net-api
+    spec:
+      containers:
+      - name: fk-covid-net-api
+        image: chanwit/fk-covid-net-api@sha256:0f4c3cb0abe813f3c1512de6fd07f125f8b1eef121c772a123f1b58c89d3582d
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MINIO_ENDPOINT
+          value: minio-service.kubeflow:9000
+        - name: MINIO_ACCESS_KEY
+          value: minio
+        - name: MINIO_SECRET_KEY
+          value: minio123
+        - name: MINIO_SSL
+          value: "false"
+        - name: FK_COVID_NET_INFERENCE_ENDPOINT
+          value: fk-covid-net-inference.kubeflow:5000
