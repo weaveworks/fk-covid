@@ -25,7 +25,7 @@ spec:
           value: minio-service.kubeflow:9000
         - name: MINIO_ACCESS_KEY
           value: minio
-        - name: MINIO_SECRET_KET
+        - name: MINIO_SECRET_KEY
           value: minio123
         - name: MINIO_SSL
           value: "false"
