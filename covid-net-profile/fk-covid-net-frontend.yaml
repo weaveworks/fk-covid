@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fk-covid-net-frontend
+  namespace: kubeflow
+  labels:
+    app: fk-covid-net-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fk-covid-net-frontend
+  template:
+    metadata:
+      labels:
+        app: fk-covid-net-frontend
+    spec:
+      containers:
+      - name: fk-covid-net-frontend
+        image: chanwit/fk-covid-net-frontend@sha256:027d1d5ecca257a762493e4ee52b1fb1bf3e725c9f90724b4aca177f4883f3fe
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fk-covid-net-frontend
+  name: fk-covid-net-frontend
+  namespace: kubeflow
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: fk-covid-net-frontend
