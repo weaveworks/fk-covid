@@ -24,7 +24,7 @@ machines:
     privileged: true
     volumes:
     - destination: /var/lib/docker
-      source: fkcovid-8
+      source: fkcovid-0
       type: volume
 - count: 1
   spec:
@@ -48,5 +48,5 @@ machines:
     privileged: true
     volumes:
     - destination: /var/lib/docker
-      source: fkcovid-9
+      source: fkcovid-1
       type: volume
