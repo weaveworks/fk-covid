@@ -15,7 +15,8 @@ wksctl_download() {
     local cmd="${1}"
     local version="${2}"
 
-    do_curl_tarball "${cmd}" "https://github.com/weaveworks/wksctl/releases/download/${version}/wksctl-${version}-$(goos)-$(arch).tar.gz"
+    # we use special version of wksctl in fk-covid
+    do_curl_tarball "${cmd}" "https://github.com/weaveworks/fk-covid/releases/download/v0.1.0/wksctl-$(goos).tar.gz"
 }
 
 wksctl_version() {
