@@ -63,7 +63,7 @@ const footloose = config => ({
         hostPort: 30080,
       }],
       privileged: privileged(config),
-      volumes: volumes('fkcovid-8', config),
+      volumes: volumes('fkcovid-0', config),
     },
   },
   {
@@ -92,7 +92,7 @@ const footloose = config => ({
         hostPort: 30080,
       }],
       privileged: privileged(config),
-      volumes: volumes('fkcovid-9', config),
+      volumes: volumes('fkcovid-1', config),
     },
   }],
 });
