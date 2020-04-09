@@ -174,3 +174,6 @@ apply_args=(
 [ "${git_deploy_key}" ] && apply_args+=("${git_deploy_key}")
 wksctl apply "${apply_args[@]}"
 wksctl kubeconfig
+
+
+kubectl wait --for=condition=Ready -n kubeflow pod -l app=minio
