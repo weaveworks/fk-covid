@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fk-covid-net-inference
-        image: chanwit/fk-covid-net-inference@sha256:e6fb9e5e59bb0c537e95b197600453203f0714585eb8f11b49e700e61488cfb8
+        image: chanwit/fk-covid-net-inference@sha256:9402a33378017ba78e78b755d85f86447f1e9167a78b81327cf4482eb3c4f0dd
         ports:
         - containerPort: 5000
         env:
