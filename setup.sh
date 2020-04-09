@@ -177,8 +177,9 @@ wksctl kubeconfig
 
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=wks-controller
-sleep 10
+sleep 15
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
 
 
 kubectl wait --timeout=120s --for=condition=Ready -n kubeflow pod -l app=minio
+kubectl wait --timeout=120s --for=condition=Ready -n kubeflow pod -l app=fk-covid-net-inference

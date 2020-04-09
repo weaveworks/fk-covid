@@ -29,6 +29,21 @@ spec:
           value: minio123
         - name: MINIO_SSL
           value: "false"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fk-covid-net-inference
+  name: fk-covid-net-inference
+  namespace: kubeflow
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: fk-covid-net-inference
 
 # apiVersion: v1
 # kind: Pod
