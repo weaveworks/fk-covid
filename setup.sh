@@ -175,10 +175,10 @@ apply_args=(
 wksctl apply "${apply_args[@]}"
 wksctl kubeconfig
 
-kubectl wait --for=condition=Ready -n weavek8sops pod -l name=weave-net
-kubectl wait --for=condition=Ready -n weavek8sops pod -l name=wks-controller
+kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
+kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=wks-controller
 sleep 10
-kubectl wait --for=condition=Ready -n weavek8sops pod -l name=weave-net
+kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
 
 
-kubectl wait --for=condition=Ready -n kubeflow pod -l app=minio
+kubectl wait --timeout=120s --for=condition=Ready -n kubeflow pod -l app=minio
