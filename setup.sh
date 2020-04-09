@@ -175,11 +175,21 @@ apply_args=(
 wksctl apply "${apply_args[@]}"
 wksctl kubeconfig
 
+echo "Waiting for a networking pod on master ..."
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
+
+echo "Waiting for a controller pod ..."
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=wks-controller
+
+echo "Waiting for a networking pod on worker ..."
 sleep 15
 kubectl wait --timeout=120s --for=condition=Ready -n weavek8sops pod -l name=weave-net
 
-
+echo "Waiting for the object storage pod ..."
 kubectl wait --timeout=120s --for=condition=Ready -n kubeflow pod -l app=minio
+
+echo "Waiting for the inference pod ..."
 kubectl wait --timeout=120s --for=condition=Ready -n kubeflow pod -l app=fk-covid-net-inference
+
+echo "Listing services"
+kubectl get svc -n kubeflow
