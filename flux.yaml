@@ -110,8 +110,8 @@ items:
         containers:
         - args:
           - --ssh-keygen-dir=/var/fluxd/keygen
-          - --git-url=https://github.com/chanwit/wks-firekube-upgrade-demo
-          - --git-branch=fkcovid
+          - --git-url=https://github.com/weaveworks/fk-covid
+          - --git-branch=master
           - --git-poll-interval=30s
           - --git-path=.
           - --git-readonly
