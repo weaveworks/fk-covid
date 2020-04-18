@@ -1,8 +1,0 @@
-# This file is auto-genearted by gitops-profile tool.
-# Filename: .wksctlignore
-
-gitops-profile.yaml
-.eksctlignore
-.wksctlignore
-eks/
-components/
