@@ -1,0 +1,18 @@
+apiVersion: gitops.weave.works/v1alpha1
+kind: Profile
+metadata:
+  name: covid-ml-profile
+spec:
+  filters:
+  - name: eksctl
+    includes:
+    - '**/*'
+    excludes:
+    - 'firekube/'
+    - 'components/'
+  - name: wksctl
+    includes:
+    - '**/*'
+    excludes:
+    - 'eks/'
+    - 'components/'
