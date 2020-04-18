@@ -1,0 +1,8 @@
+# This file is auto-genearted by gitops-profile tool.
+# Filename: .eksctlignore
+
+gitops-profile.yaml
+.eksctlignore
+.wksctlignore
+firekube/
+components/
