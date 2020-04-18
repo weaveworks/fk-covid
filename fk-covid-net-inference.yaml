@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fk-covid-net-inference
+  namespace: kubeflow
+  labels:
+    app: fk-covid-net-inference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fk-covid-net-inference
+  template:
+    metadata:
+      labels:
+        app: fk-covid-net-inference
+    spec:
+      containers:
+      - name: fk-covid-net-inference
+        image: chanwit/fk-covid-net-inference@sha256:9402a33378017ba78e78b755d85f86447f1e9167a78b81327cf4482eb3c4f0dd
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MINIO_ENDPOINT
+          value: minio-service.kubeflow:9000
+        - name: MINIO_ACCESS_KEY
+          value: minio
+        - name: MINIO_SECRET_KEY
+          value: minio123
+        - name: MINIO_SSL
+          value: "false"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fk-covid-net-inference
+  name: fk-covid-net-inference
+  namespace: kubeflow
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: fk-covid-net-inference
+
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: secret-env-pod
+# spec:
+#   containers:
+#   - name: mycontainer
+#     image: redis
+#     env:
+#       - name: SECRET_USERNAME
+#         valueFrom:
+#           secretKeyRef:
+#             name: mysecret
+#             key: username
+#       - name: SECRET_PASSWORD
+#         valueFrom:
+#           secretKeyRef:
+#             name: mysecret
+#             key: password
+#   restartPolicy: Never
