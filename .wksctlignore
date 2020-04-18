@@ -1,0 +1,6 @@
+# This file is auto-genearted by gitops-profile tool.
+# Filename: .wksctlignore
+
+covid-ml-profile.yaml
+eks/
+components/
