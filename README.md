@@ -7,8 +7,8 @@ A Firekube distribution for inferencing COVID-19 using COVID-Net.
 We provide several ways to use FK-Covid.
 The easiest way is:
   
-  * Download our standalone `fk-covid-app` from https://github.com/weaveworks/fk-covid/releases/download/v0.1.0/fk-covid-app,
-  * Change it mode to be executable (`chmod +x fk-covid-app`),
+  * Download our standalone `fk-covid-app` from https://github.com/weaveworks/fk-covid/releases/download/v0.1.1/fk-covid-app,
+  * Change its mode to be executable (`chmod +x fk-covid-app`),
   * And run it `fk-covid-app`.
 
 It will bring up a Firekube cluster with all components installed.
