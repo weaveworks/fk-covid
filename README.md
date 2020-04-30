@@ -65,6 +65,8 @@ Then install the COVID ML Profile, which is a portable profile containing all FK
 
 After the profile installed, wait until all PODs ready and FK-Covid can be accessed via URLs retrieved from `kubectl get svc -n kubeflow`.
 
+When opening browser to the MinIO page, and the login page will ask you to fill in `Access Key` and `Secret Key`. Please use the default keys as `minio` and `minio123`.
+
 ## Getting Started with AKS
 
 Please create an AKS cluster and install the AKS version of COVID ML Profile from this repo: https://github.com/berndverst/covid-net-azure-profile
