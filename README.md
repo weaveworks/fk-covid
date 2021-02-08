@@ -70,3 +70,19 @@ When opening browser to the MinIO page, and the login page will ask you to fill 
 ## Getting Started with AKS
 
 Please create an AKS cluster and install the AKS version of COVID ML Profile from this repo: https://github.com/berndverst/covid-net-azure-profile
+
+## Help
+
+We are a very friendly community and love questions, help and feedback.
+
+If you have any questions, feedback, or problems with `fk-covid`:
+
+* Join the discussion
+  * Invite yourself to the <a href="https://slack.weave.works/" target="_blank">Weave community</a> Slack.
+  * Ask a question on the [#general](https://weave-community.slack.com/messages/general/) Slack channel.
+  * Join the [Weave User Group](https://www.meetup.com/pro/Weave/) and get invited to online talks, hands-on training and meetups in your area.
+* [File an issue](https://github.com/weaveworks/fk-covid/issues/new).
+
+Weaveworks follows the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting a Weaveworks project maintainer, or Alexis Richardson (alexis@weave.works).
+
+Your feedback is always welcome!
